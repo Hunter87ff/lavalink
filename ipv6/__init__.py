@@ -10,7 +10,7 @@ from typing import Any, Callable
 
 import requests
 
-from sipv6.const import (
+from ipv6.const import (
     ICANHAZIP_IPV6_ADDRESS,
     IP,
     IPROUTE,
@@ -18,7 +18,7 @@ from sipv6.const import (
     LOG_LEVELS_NAMES,
     LOGGER,
 )
-from sipv6.helpers import (
+from ipv6.helpers import (
     PreviousConfig,
     SavedRanges,
     check_ipv6_connectivity,
@@ -28,7 +28,7 @@ from sipv6.helpers import (
     root_check,
     what_ranges,
 )
-from sipv6.ranges import RANGES
+from ipv6.ranges import RANGES
 
 SHARED_OPTIONS = [
     (
