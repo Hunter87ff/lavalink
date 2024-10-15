@@ -1,5 +1,6 @@
 plugins:
 
+
   youtube:
     enabled: true # Whether this source can be used.
     allowSearch: true # Whether "ytsearch:" and "ytmsearch:" can be used.
