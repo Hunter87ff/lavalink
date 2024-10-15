@@ -18,8 +18,10 @@ cmd_awk="/usr/bin/awk"
 cmd_head="/usr/bin/head"
 squid_confd="/etc/squid/conf.d/"
 interface="eth0"
-network=$($cmd_ip -o -f inet6 addr show dev $interface | $cmd_awk '/scope global/ {print $4}' | $cmd_head -c -24)
+# network=$($cmd_ip -o -f inet6 addr show dev $interface | $cmd_awk '/scope global/ {print $4}' | $cmd_head -c -24)
+network=$($cmd_ip -o -f inet6 addr show dev $interface | $cmd_awk '/scope global/ {print $4}')
 sleeptime="30s"
+echo "Network: $network"
 
 # -----
 # Generate Random Address
