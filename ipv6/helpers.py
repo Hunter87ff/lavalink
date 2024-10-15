@@ -8,14 +8,14 @@ from typing import Iterator
 import requests
 from requests.adapters import HTTPAdapter
 
-from smart_ipv6_rotator.const import (
+from ipv6.const import (
     ICANHAZIP_IPV6_ADDRESS,
     IPROUTE,
     JSON_CONFIG_FILE,
     LOGGER,
 )
-from smart_ipv6_rotator.models import SavedRanges
-from smart_ipv6_rotator.ranges import RANGES
+from ipv6.models import SavedRanges
+from ipv6.ranges import RANGES
 
 
 def root_check(skip_root: bool = False) -> None:
