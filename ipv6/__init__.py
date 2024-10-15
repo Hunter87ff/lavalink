@@ -10,7 +10,7 @@ from typing import Any, Callable
 
 import requests
 
-from smart_ipv6_rotator.const import (
+from sipv6.const import (
     ICANHAZIP_IPV6_ADDRESS,
     IP,
     IPROUTE,
@@ -18,7 +18,7 @@ from smart_ipv6_rotator.const import (
     LOG_LEVELS_NAMES,
     LOGGER,
 )
-from smart_ipv6_rotator.helpers import (
+from sipv6.helpers import (
     PreviousConfig,
     SavedRanges,
     check_ipv6_connectivity,
@@ -28,7 +28,7 @@ from smart_ipv6_rotator.helpers import (
     root_check,
     what_ranges,
 )
-from smart_ipv6_rotator.ranges import RANGES
+from sipv6.ranges import RANGES
 
 SHARED_OPTIONS = [
     (
