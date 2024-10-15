@@ -1,0 +1,39 @@
+name: Tests
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 */6 * * *'
+    
+permissions:
+  contents: read
+
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.10.9  
+
+    - name: Set up JDK 17
+      uses: actions/setup-java@v3
+      with:
+        distribution: 'temurin'
+        java-version: '22'
+        
+    - name: Setup CF
+      run: |
+        curl -L --output cloudflared.deb https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb && sudo dpkg -i cloudflared.deb && sudo cloudflared service install ${{ secrets.CF_KEY }}
+
+    - name: Setup Deploy
+      run: |
+        java -jar Lavalink.jar
+        
+      working-directory: ./lava
