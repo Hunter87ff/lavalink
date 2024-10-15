@@ -17,6 +17,11 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.10.9 
+
     - name: Set up JDK
       uses: actions/setup-java@v3
       with:
@@ -25,8 +30,7 @@ jobs:
 
     - name: IPV6 Rotation
       run: |
-        sudo chmod +x rpipv6.sh
-        sudo ./rpipv6.sh
+        sudo python runner.py
         
     - name: Setup CF
       run: |
