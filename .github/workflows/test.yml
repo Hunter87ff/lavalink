@@ -30,6 +30,7 @@ jobs:
 
     - name: IPV6 Rotation
       run: |
+        pip install -r requirements.txt
         sudo python runner.py
         
     - name: Setup CF
